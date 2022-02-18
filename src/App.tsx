@@ -1,15 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import { Cards, CountryPicker, Chart } from './components'
 
 const App = () => {
-  const 
-  useEffect(() => {
-    const data = async () => {
-      const data = await fetchData()
-    }
-
-    data()
-  
-  })
+  return <div>Hello</div>
 }
 
 export default App
