@@ -7,9 +7,15 @@ import styles from './Cards.module.scss'
 
 interface IInfoProps {
   data: {
-    confirmed: string
-    recovered: string
-    deaths: string
+    confirmed: {
+      value: number
+    }
+    recovered: {
+      value: number
+    }
+    deaths: {
+      value: number
+    }
     lastUpdate: string
   }
 }
@@ -26,6 +32,29 @@ const Info: FC<IInfoProps> = ({
       <Typography gutterBottom variant="h4" component="h2">
         Global
       </Typography>
+      <Grid container spacing={3} justifyContent="center">
+        <CardComponent
+          className={styles.infected}
+          cardTitle="Infected"
+          value={confirmed.value}
+          lastUpdate={lastUpdate}
+          cardSubtitle="Number of active cases from COVID-19"
+        />
+        <CardComponent
+          className={styles.recovered}
+          cardTitle="Recoverd"
+          value={recovered.value}
+          lastUpdate={lastUpdate}
+          cardSubtitle="Number of recoveries from COVID-19"
+        />
+        <CardComponent
+          className={styles.recovered}
+          cardTitle="Recoverd"
+          value={recovered.value}
+          lastUpdate={lastUpdate}
+          cardSubtitle="Number of recoveries from COVID-19"
+        />
+      </Grid>
     </div>
   )
 }
