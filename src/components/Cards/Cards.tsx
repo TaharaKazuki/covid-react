@@ -21,7 +21,7 @@ interface IInfoProps {
 }
 
 const Info: FC<IInfoProps> = ({
-  data: { confirmed, recovered, lastUpdate },
+  data: { confirmed, recovered, deaths, lastUpdate },
 }) => {
   if (!confirmed) {
     return <div>Loading...</div>
@@ -48,11 +48,11 @@ const Info: FC<IInfoProps> = ({
           cardSubtitle="Number of recoveries from COVID-19"
         />
         <CardComponent
-          className={styles.recovered}
-          cardTitle="Recoverd"
-          value={recovered.value}
+          className={styles.deaths}
+          cardTitle="Deaths"
+          value={deaths.value}
           lastUpdate={lastUpdate}
-          cardSubtitle="Number of recoveries from COVID-19"
+          cardSubtitle="Number of death caused from COVID-19"
         />
       </Grid>
     </div>
